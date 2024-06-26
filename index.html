@@ -2,22 +2,84 @@
 <html lang="en">
 
 <head>
-    <title>Pruebas ...</title>
+    <title>Cubana de aviación / Sistema de reservación</title>
     <!-- Required meta tags always come first -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+    <link rel="shortcut icon" href="favicon.ico">
+
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/all.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body data-bs-theme="">
-    <h1>Hola mundo</h1>
+
+    <section class="container-fluid">
+        <div class="row w-100 my-3 border rounded-3 px-2">
+            <article class="logo d-flex align-items-center col-12 col-md-6">
+                <img class="mx-3" width="86" height="86" src="../favicon.ico" alt="Logo Site">
+                <div class="d-flex flex-column">
+                    <span class="h3 d-flex">Cubana de aviación</span>
+                    <span class="form-text">Sistema de reservacion</span>
+                </div>
+            </article>
+            <hr class="d-md-none">
+            <nav class="col-12 col-md-6 nav d-flex align-items-center">
+                <a class="mx-3 d-flex h4 p-2 active" href="index.html"><i class="fa d-none d-md-block mx-2 fa-duotone fa-home" aria-hidden="true"></i> Inicio</a>
+                <a class="mx-3 d-flex h4 p-2 opacity-75" href="reservacion/reservacion.html"><i class="fa d-none d-md-block mx-2 fa-duotone fa-bars-progress"></i> Reservacion</a>
+                <a class="mx-3 d-flex h4 p-2 opacity-75" href="about.html"><i class="fa d-none d-md-block mx-2 fa-duotone fa-address-book"></i> Nosotros</a>
+            </nav>
+        </div>
+    </section>
+
+
+
+    <main class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <form class="my-4 border p-3 rounded-3">
+                    <h1 class="h3 mb-3 fw-normal">Iniciar seción</h1>
+
+                    <div class="form-floating my-2">
+                        <input type="text" class="form-control" id="InputUser" placeholder="user">
+                        <label for="InputUser">User *</label>
+                    </div>
+                    <div class="form-floating my-2">
+                        <input type="password" class="form-control" id="InputPassword" placeholder="Password">
+                        <label for="InputPassword">Password *</label>
+                    </div>
+
+                    <div class="form-check text-start my-3">
+                        <a href="#">Has olvidado la contrseña ?</a>
+                    </div>
+                    <button class="sign-in btn btn-primary w-100 py-2" type="button">Sign in</button>
+                    <hr>
+                    <p class="fw-bold mb-3">Registrarse y formes parte de nuestra comunidad</p>
+                    <a class="w-100 py-2 mb-2 btn btn-outline-primary" href="sign/sign-up.html">
+                        Registrarse <i class="fa mx-2 left-bottom fa-duotone fa-angles-right"></i>
+                    </a>
+                </form>
+
+            </div>
+            <div class="col-12 col-md-6 d-flex">
+
+            </div>
+        </div>
+    </main>
+
 
 
     <script src="js/bootstrap.min.js "></script>
     <script src="js/script.js "></script>
+    <script>
+        if (JSON.parse(localStorage.getItem('users')).ActiveUser != null) {
+            window.location.href = "reservacion/reservacion.html";
+        }
+    </script>
 </body>
 
 </html>
