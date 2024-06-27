@@ -42,10 +42,15 @@
     <main class="container">
         <div class="row">
             <div class="col-12 col-md-3">
-                <article class="border rounded-3 p-2 vh-50 m-auto d-flex flex-column text-center">
+                <article class="border rounded-3 p-2 vh-75 m-auto d-flex flex-column text-center">
                     <h2 class="SwohFullName"></h2>
                     <hr>
                     <p class="SwohMail"></p>
+
+                    <ol class="ol m-auto">
+                        <button class="form-control my-2 shadow-none">Listado mis reservacion</button>
+                        <button class="form-control my-2 shadow-none">Cambiar mis datos</button>
+                    </ol>
 
                     <a href="../index.html" id="CloseSign" class="mt-auto">
                         <i class="fa fa-sign-in" aria-hidden="true"></i> Cerrar sección
@@ -53,31 +58,48 @@
                 </article>
             </div>
             <div class="col-12 col-md-9">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Vuelo</th>
-                            <th scope="col">Origen</th>
-                            <th scope="col">Destino</th>
-                            <th scope="col">Precio</th>
-                            <th scope="col"></th>
-                            <th scope="col">Reservar</th>
-                        </tr>
-                    </thead>
-                    <tbody class="ShowReserv">
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="border rounded-3 py-2">
+                    <h3 class="h3 px-2">Listado de vuleos disponibles</h3>
+                    <p class="form-text px-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quasi molestiae nihil ipsa quod at quibusdam. Aperiam, maiores repellendus corporis quisquam mollitia iure ab nemo fugiat dignissimos dolore est cupiditate.</p>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Vuelo</th>
+                                <th scope="col">Origen</th>
+                                <th scope="col">Destino</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col"></th>
+                                <th scope="col">Reservar</th>
+                            </tr>
+                        </thead>
+                        <tbody class="ShowReserv"></tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </main>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasTopLabel">Datos de la reservación</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <img class="m-auto" width="86" height="86" src="../favicon.ico">
+            <h6>Numero de vuelo</h6>
+            <span class="flightNumber"></span>
+            <hr>
+            <h4>Origen</h4>
+            <span class="origin form-control"></span>
+            <h4>Destino</h4>
+            <span class="destination form-control"></span>
 
+            <span class="mx-auto fa-3x">$</span>
+            <p class="mx-auto fa-2x">$ <span class="price"></span>.00</p>
+
+
+            <button class="btn btn-outline-primary mt-auto" id="BookFlight">Reservar este Vuelo</button>
+        </div>
+    </div>
 
     <footer class="footer text-center">
         <div class="container">

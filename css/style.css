@@ -1,5 +1,5 @@
 @charset "UTF-8";
-:root {
+ :root {
     --mycolor-bg-dark: #212129;
     --mycolor-bg-dark-50: #2121298e;
 }
@@ -36,7 +36,8 @@ body {
 
 input:focus,
 button:focus {
-    outline: 0;
+    outline: 0 !important;
+    border-color: transparent;
 }
 
 a {
@@ -115,6 +116,11 @@ button,
 
 nav .active {
     border-bottom: 2px blue solid;
+}
+
+.border-bottom {
+    border: 0;
+    border-bottom: 5px var(--bs-dark-text-emphasis) solid;
 }
 
 

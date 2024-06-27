@@ -3,6 +3,7 @@ const body = document.body;
 let ListUser;
 let ActiveUser = null;
 let listReserv = createReservacion();
+let flightNumber = null;
 
 // ----------------------------------------------
 // Leyendo datos iniciales de " localStorage "
@@ -38,10 +39,38 @@ for (let i = 0; i < listReserv.length; i++) {
         "<td>" + listReserv[i].destination + "</td>" +
         "<td> $ " + listReserv[i].price + "0.00 </td>" +
         "<td> </td>" +
-        "<td class=\"d-flex\"> <button class=\"m-auto btn btn-outline-primary\"><i class=\"fa m-auto fa-duotone fa-arrow-pointer\"></i> Reservar vuelo </button> </td>" +
+        "<td class=\"d-flex\"><button class=\"m-auto btn btn-outline-primary book-flight\"" +
+        "flightNumber=\"" + listReserv[i].flightNumber + "\"" +
+        "data-bs-toggle=\"offcanvas\" data-bs-target=\"#offcanvasTop\">Reservar vuelo </button></td>" +
         "</tr>";
 }
 body.querySelector(".ShowReserv").innerHTML = show;
+
+document.body.querySelectorAll(".book-flight").forEach(element => {
+    element.addEventListener("click", () => {
+
+        flightNumber = element.getAttribute("flightNumber");
+        body.querySelector(".flightNumber").innerHTML = flightNumber;
+
+        listReserv.forEach(element => {
+            if (element.flightNumber == flightNumber) {
+                body.querySelector(".origin").innerHTML = element.origin;
+                body.querySelector(".destination").innerHTML = element.destination;
+                body.querySelector(".price").innerHTML = element.price;
+
+            }
+        });
+
+    });
+});
+document.getElementById("BookFlight").addEventListener("click", () => {
+    for (let i = 0; i < ListUser.length; i++) {
+        if (ListUser[i].user == ActiveUser.user)
+            ListUser[i].listReserv.push(flightNumber);
+    }
+    localStorage.setItem('users', JSON.stringify({ "ListUser": ListUser, "ActiveUser": ActiveUser }));
+
+});
 
 
 

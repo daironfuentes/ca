@@ -30,13 +30,13 @@ try {
                     "ActiveUser": {
                         user: ListUser[i].user,
                         fullname: ListUser[i].fullname,
-                        mail: ListUser[i].mail
+                        mail: ListUser[i].mail,
+                        listReserv: ListUser[i].listReserv
                     }
                 }));
                 window.location.href = "reservacion/reservacion.html";
             } else {
                 console.log(ListUser[i].user, ListUser[i].password);
-                // window.location.href = "index.html";
             }
 
         }
@@ -55,10 +55,12 @@ try {
             user: document.getElementById("InputUser").value,
             password: document.getElementById("InputPassword").value,
             fullname: document.getElementById("InputFullName").value,
-            mail: document.getElementById("InputMail").value
+            mail: document.getElementById("InputMail").value,
+            listReserv: []
         };
         // Añadiendolo a la lista de usuarios de localStorage
         AnadirListaDeUsuario(saveUser);
+        window.location.href = "../index.html";
     });
 } catch (error) {
 
