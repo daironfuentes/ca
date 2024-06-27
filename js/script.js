@@ -22,6 +22,21 @@ try {
             user: document.getElementById("InputUser").value,
             password: document.getElementById("InputPassword").value
         };
+
+        // Validardor de credenciales del formulario
+        if (saveUser.user == "") {
+            document.getElementById("InputUser").classList.add("is-invalid");
+            return null;
+        } else {
+            document.getElementById("InputUser").classList.remove("is-invalid");
+        }
+        if (saveUser.password == "") {
+            document.getElementById("InputPassword").classList.add("is-invalid");
+            return null;
+        } else {
+            document.getElementById("InputPassword").classList.remove("is-invalid");
+        }
+        // Comprobar si exite el usuario a registrar
         for (let i = 0; i < ListUser.length; i++) {
             if (ListUser[i].user == saveUser.user &&
                 ListUser[i].password == saveUser.password) {
@@ -36,7 +51,7 @@ try {
                 }));
                 window.location.href = "reservacion/reservacion.html";
             } else {
-                console.log(ListUser[i].user, ListUser[i].password);
+                body.querySelector('.sign-in').classList.add("is-invalid");
             }
 
         }

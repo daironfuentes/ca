@@ -47,16 +47,25 @@
                     <div class="form-floating my-2">
                         <input type="text" class="form-control border-bottom shadow-none" id="InputUser" placeholder="user">
                         <label for="InputUser">User *</label>
+                        <div class="invalid-feedback">
+                            Este campo no puede estar vacio
+                        </div>
                     </div>
                     <div class="form-floating my-2">
                         <input type="password" class="form-control border-bottom shadow-none" id="InputPassword" placeholder="Password">
                         <label for="InputPassword">Password *</label>
+                        <div class="invalid-feedback">
+                            Este campo no puede estar vacio
+                        </div>
                     </div>
 
                     <div class="form-check text-start my-3">
                         <a href="#">Has olvidado la contrseña ?</a>
                     </div>
                     <button class="sign-in btn btn-primary w-100 py-2" type="button">Sign in</button>
+                    <div class="invalid-feedback">
+                        Error de credenciales, la contraseña es inicrecta o el este usuario no esta registrado
+                    </div>
                     <hr>
                     <p class="fw-bold mb-3">Registrarse y formes parte de nuestra comunidad</p>
                     <a class="w-100 py-2 mb-2 btn btn-outline-primary" href="sign/sign-up.html">
