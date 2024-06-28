@@ -38,13 +38,34 @@ for (let i = 0; i < listReserv.length; i++) {
         "<td>" + listReserv[i].origin + "</td>" +
         "<td>" + listReserv[i].destination + "</td>" +
         "<td> $ " + listReserv[i].price + "0.00 </td>" +
-        "<td> </td>" +
-        "<td class=\"d-flex\"><button class=\"m-auto btn btn-outline-primary book-flight\"" +
-        "flightNumber=\"" + listReserv[i].flightNumber + "\"" +
-        "data-bs-toggle=\"offcanvas\" data-bs-target=\"#offcanvasTop\">Reservar vuelo </button></td>" +
-        "</tr>";
+        "<td> </td>"
+    if (indexOfFlightNumber(listReserv[i].flightNumber)) {
+        show += "<td class=\"d-flex\"><button class=\"m-auto btn btn-outline-primary book-flight w-100\"" +
+            "flightNumber=\"" + listReserv[i].flightNumber + "\"" +
+            "data-bs-toggle=\"offcanvas\" data-bs-target=\"#offcanvasTop\">Reservar vuelo </button></td>"
+    } else {
+        show += "<td>Ya esta reservado</td>"
+
+    }
+    show += "</tr>";
 }
 body.querySelector(".ShowReserv").innerHTML = show;
+
+
+function indexOfFlightNumber(fn) {
+    let la;
+    for (let i = 0; i < ListUser.length; i++) {
+        if (ListUser[i].user == ActiveUser.user)
+            la = ListUser[i].listReserv
+    }
+    for (let x = 0; x < la.length; x++) {
+        if (la[x] == fn) {
+            return false;
+        }
+
+    }
+    return true;
+}
 
 document.body.querySelectorAll(".book-flight").forEach(element => {
     element.addEventListener("click", () => {
@@ -69,7 +90,7 @@ document.getElementById("BookFlight").addEventListener("click", () => {
             ListUser[i].listReserv.push(flightNumber);
     }
     localStorage.setItem('users', JSON.stringify({ "ListUser": ListUser, "ActiveUser": ActiveUser }));
-
+    body.querySelector(".IdN88DE275").click()
 });
 
 

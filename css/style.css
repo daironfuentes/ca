@@ -60,7 +60,7 @@ button,
 
 .bg-t,
 .bg-transparent {
-    background: transparent;
+    background: transparent !important;
 }
 
 .vh-100 {
@@ -114,6 +114,23 @@ button,
 
 /* ------------------------- */
 
+.background {
+    background: url(../img/background.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.background::before {
+    content: "";
+    background: #00000094;
+    backdrop-filter: blur(1px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
 nav .active {
     border-bottom: 2px blue solid;
 }
@@ -121,6 +138,11 @@ nav .active {
 .border-bottom {
     border: 0;
     border-bottom: 5px var(--bs-dark-text-emphasis) solid;
+}
+
+.background-sign-up {
+    background: url(../img/background-sign-up.jpg) no-repeat center;
+    background-size: cover;
 }
 
 

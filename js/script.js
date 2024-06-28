@@ -49,7 +49,7 @@ try {
                         listReserv: ListUser[i].listReserv
                     }
                 }));
-                window.location.href = "reservacion/reservacion.html";
+                window.location.href = "pages/reservacion.html";
             } else {
                 body.querySelector('.sign-in').classList.add("is-invalid");
             }

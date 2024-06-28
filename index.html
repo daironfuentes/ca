@@ -7,31 +7,30 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-
-    <link rel="shortcut icon" href="favicon.ico">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="favicon.png">
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/all.css">
+    <link rel="stylesheet" type="text/css" href="css/assets/css/all.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-<body data-bs-theme="">
+<body class="background" data-bs-theme="">
 
-    <section class="container-fluid">
-        <div class="row w-100 my-3 border rounded-3 px-2">
+    <section class="container-fluid py-3">
+        <div class="row w-100 border border-2 shadow rounded-3 p-1 bg">
             <article class="logo d-flex align-items-center col-12 col-md-6">
-                <img class="mx-3" width="86" height="86" src="favicon.ico" alt="Logo Site">
+                <img class="mx-3" width="64" height="64" src="favicon.png" alt="Logo Site">
                 <div class="d-flex flex-column">
-                    <span class="h3 d-flex">Cubana de aviación</span>
-                    <span class="form-text">Sistema de reservacion</span>
+                    <span class="h3 m-0 d-flex">Cubana de aviación</span>
+                    <span class="m-0 form-text">Sistema de reservacion</span>
                 </div>
             </article>
             <hr class="d-md-none">
             <nav class="col-12 col-md-6 nav d-flex align-items-center">
-                <a class="mx-3 d-flex h4 p-2 active" href="index.html"><i class="fa d-none d-md-block mx-2 fa-duotone fa-home" aria-hidden="true"></i> Inicio</a>
-                <a class="mx-3 d-flex h4 p-2 opacity-75" href="reservacion/reservacion.html"><i class="fa d-none d-md-block mx-2 fa-duotone fa-bars-progress"></i> Reservacion</a>
-                <a class="mx-3 d-flex h4 p-2 opacity-75" href="about.html"><i class="fa d-none d-md-block mx-2 fa-duotone fa-address-book"></i> Nosotros</a>
+                <a class="mx-1 d-flex h4 p-2 active" href="index.html"><i class="fa d-none d-md-block mx-2 fa-duotone fa-home" aria-hidden="true"></i> Inicio</a>
+                <a class="mx-1 d-flex h4 p-2 opacity-75" href="pages/reservacion.html"><i class="fa d-none d-md-block mx-2 fa-duotone fa-bars-progress"></i> Reservacion</a>
+                <a class="mx-1 d-flex h4 p-2 opacity-75" href="pages/about.html"><i class="fa d-none d-md-block mx-2 fa-duotone fa-address-book"></i> Nosotros</a>
             </nav>
         </div>
     </section>
@@ -41,11 +40,11 @@
     <main class="container">
         <div class="row">
             <div class="col-12 col-md-6">
-                <form class="my-4 border p-3 rounded-3">
-                    <h1 class="h3 mb-3 fw-normal">Iniciar seción</h1>
+                <form class="my-4 border p-3 rounded-3 bg">
+                    <h1 class="h3 mb-3 fw-normal"><i class="fa fa-sign-in mx-2" aria-hidden="true"></i> Iniciar seción</h1>
 
                     <div class="form-floating my-2">
-                        <input type="text" class="form-control border-bottom shadow-none" id="InputUser" placeholder="user">
+                        <input type="text" class="form-control border-bottom shadow-none bg-light" id="InputUser" placeholder="user">
                         <label for="InputUser">User *</label>
                         <div class="invalid-feedback">
                             Este campo no puede estar vacio
@@ -68,27 +67,24 @@
                     </div>
                     <hr>
                     <p class="fw-bold mb-3">Registrarse y formes parte de nuestra comunidad</p>
-                    <a class="w-100 py-2 mb-2 btn btn-outline-primary" href="sign/sign-up.html">
+                    <a class="w-100 py-2 mb-2 btn btn-outline-primary" href="pages/sign-up.html">
                         Registrarse <i class="fa mx-2 left-bottom fa-duotone fa-angles-right"></i>
                     </a>
                 </form>
 
             </div>
             <div class="col-12 col-md-6 d-flex">
-
+                <img class="m-auto opacity-75" src="img/header-home.png" width="300" alt="">
             </div>
         </div>
     </main>
 
-    <button class="delete">
-        delete
-    </button>
 
     <script src="js/bootstrap.min.js "></script>
     <script src="js/script.js "></script>
     <script>
         if (JSON.parse(localStorage.getItem('users')).ActiveUser != null) {
-            window.location.href = "reservacion/reservacion.html";
+            window.location.href = "pages/reservacion.html";
         }
     </script>
 </body>
